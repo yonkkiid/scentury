@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Система авторизации - Scentury</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #2c5530;
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+        
+        .demo-section {
+            margin-bottom: 3rem;
+            padding: 2rem;
+            border: 2px solid #e9ecef;
+            border-radius: 10px;
+            background: #f8f9fa;
+        }
+        
+        .demo-title {
+            color: #4a7b5d;
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            border-bottom: 2px solid #4a7b5d;
+            padding-bottom: 0.5rem;
+        }
+        
+        
+        .form-description {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+            border-left: 4px solid #4a7b5d;
+        }
+        
+        .features-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .features-list li {
+            padding: 0.5rem 0;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .features-list li:before {
+            content: "✅ ";
+            color: #28a745;
+            font-weight: bold;
+        }
+        
+        .auth-flow {
+            background: linear-gradient(135deg, #4a7b5d 0%, #2c5530 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            margin: 2rem 0;
+        }
+        
+        .flow-step {
+            background: rgba(255,255,255,0.1);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 8px;
+            border-left: 4px solid white;
+        }
+        
+        .step-number {
+            background: white;
+            color: #2c5530;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            margin-right: 1rem;
+        }
+        
+        .tech-specs {
+            background: #e7f3ff;
+            padding: 1.5rem;
+            border-radius: 8px;
+            margin: 1rem 0;
+        }
+        
+        .code-block {
+            background: #f8f9fa;
+            border: 1px solid #e9ecef;
+            border-radius: 5px;
+            padding: 1rem;
+            font-family: 'Courier New', monospace;
+            font-size: 0.9rem;
+            overflow-x: auto;
+            margin: 1rem 0;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #4a7b5d;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 0.5rem;
+            transition: background 0.3s;
+        }
+        
+        .btn:hover {
+            background: #2c5530;
+        }
+        
+        .btn-secondary {
+            background: #6c757d;
+        }
+        
+        .btn-secondary:hover {
+            background: #545b62;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🔐 Система авторизации Scentury</h1>
+        
+        <div class="auth-flow">
+            <h2>Процесс авторизации</h2>
+            <div class="flow-step">
+                <span class="step-number">1</span>
+                <strong>Регистрация</strong> - Пользователь создает аккаунт с email и паролем
+            </div>
+            <div class="flow-step">
+                <span class="step-number">2</span>
+                <strong>Вход в систему</strong> - Авторизация по email и паролю
+            </div>
+            <div class="flow-step">
+                <span class="step-number">3</span>
+                <strong>Личный кабинет</strong> - Управление профилем и заказами
+            </div>
+            <div class="flow-step">
+                <span class="step-number">4</span>
+                <strong>Восстановление пароля</strong> - Сброс пароля через email
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">1. Форма входа (login.php)</h2>
+            
+            <div class="form-description">
+                <h3>Особенности формы входа:</h3>
+                <ul class="features-list">
+                    <li>Современный дизайн с градиентным фоном</li>
+                    <li>Валидация email и пароля</li>
+                    <li>Опция "Запомнить меня"</li>
+                    <li>Ссылка на восстановление пароля</li>
+                    <li>Обработка ошибок авторизации</li>
+                    <li>Адаптивный дизайн для мобильных устройств</li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center; background: #f0f0f0; padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                <h3>📱 Форма входа</h3>
+                <p style="color: #666; font-style: italic;">
+                    Современная форма входа с валидацией и обработкой ошибок
+                </p>
+                <a href="login.php" class="btn" target="_blank">Открыть форму входа</a>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">2. Форма регистрации (register.php)</h2>
+            
+            <div class="form-description">
+                <h3>Особенности формы регистрации:</h3>
+                <ul class="features-list">
+                    <li>Поля: Имя, Фамилия, Email, Телефон, Пароль</li>
+                    <li>Проверка силы пароля в реальном времени</li>
+                    <li>Подтверждение пароля с валидацией</li>
+                    <li>Согласие с условиями использования</li>
+                    <li>Подписка на новости (опционально)</li>
+                    <li>Валидация всех полей на клиенте и сервере</li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center; background: #f0f0f0; padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                <h3>📱 Форма регистрации</h3>
+                <p style="color: #666; font-style: italic;">
+                    Форма регистрации с проверкой силы пароля и валидацией
+                </p>
+                <a href="register.php" class="btn" target="_blank">Открыть форму регистрации</a>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">3. Личный кабинет (dashboard.php)</h2>
+            
+            <div class="form-description">
+                <h3>Функции личного кабинета:</h3>
+                <ul class="features-list">
+                    <li>Информация о профиле пользователя</li>
+                    <li>Быстрые действия (создать аромат, каталог)</li>
+                    <li>История заказов</li>
+                    <li>Настройки аккаунта</li>
+                    <li>Кнопка выхода из системы</li>
+                    <li>Адаптивный дизайн</li>
+                </ul>
+            </div>
+            
+            <div style="text-align: center; background: #f0f0f0; padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                <h3>📱 Личный кабинет</h3>
+                <p style="color: #666; font-style: italic;">
+                    Удобный личный кабинет с управлением профилем и заказами
+                </p>
+                <a href="dashboard.php" class="btn" target="_blank">Открыть личный кабинет</a>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">4. Восстановление пароля</h2>
+            
+            <div class="form-description">
+                <h3>Процесс восстановления пароля:</h3>
+                <ol>
+                    <li><strong>Запрос восстановления</strong> - Пользователь вводит email</li>
+                    <li><strong>Отправка токена</strong> - Система генерирует уникальный токен</li>
+                    <li><strong>Ссылка в email</strong> - Пользователь получает ссылку для сброса</li>
+                    <li><strong>Новый пароль</strong> - Ввод и подтверждение нового пароля</li>
+                    <li><strong>Авторизация</strong> - Вход с новым паролем</li>
+                </ol>
+            </div>
+            
+            <div style="text-align: center; background: #f0f0f0; padding: 2rem; border-radius: 8px; margin: 1rem 0;">
+                <h3>📱 Восстановление пароля</h3>
+                <p style="color: #666; font-style: italic;">
+                    Система восстановления пароля через email с токенами безопасности
+                </p>
+                <a href="forgot-password.php" class="btn" target="_blank">Забыли пароль?</a>
+                <a href="reset-password.php?token=demo" class="btn btn-secondary" target="_blank">Сброс пароля</a>
+            </div>
+        </div>
+
+        <div class="tech-specs">
+            <h2>🔧 Технические характеристики</h2>
+            
+            <h3>Безопасность:</h3>
+            <ul class="features-list">
+                <li>Хеширование паролей с помощью password_hash()</li>
+                <li>Валидация всех входящих данных</li>
+                <li>Защита от SQL-инъекций (PDO)</li>
+                <li>Токены для восстановления пароля</li>
+                <li>Сессии для управления состоянием</li>
+            </ul>
+            
+            <h3>База данных:</h3>
+            <div class="code-block">
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    first_name VARCHAR(100) NOT NULL,
+    last_name VARCHAR(100) NOT NULL,
+    email VARCHAR(255) UNIQUE NOT NULL,
+    phone VARCHAR(20),
+    password VARCHAR(255) NOT NULL,
+    newsletter BOOLEAN DEFAULT FALSE,
+    status ENUM('active', 'inactive', 'banned') DEFAULT 'active',
+    role ENUM('user', 'admin', 'moderator') DEFAULT 'user',
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+            </div>
+            
+            <h3>Файловая система (резервный вариант):</h3>
+            <ul class="features-list">
+                <li>Хранение пользователей в JSON файле</li>
+                <li>Автоматическое переключение при недоступности БД</li>
+                <li>Синхронизация данных между системами</li>
+            </ul>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="demo-title">🚀 Как протестировать</h2>
+            
+            <div class="form-description">
+                <h3>Пошаговая инструкция:</h3>
+                <ol>
+                    <li><strong>Запустите сайт</strong> - Откройте http://localhost/scentury/</li>
+                    <li><strong>Регистрация</strong> - Нажмите "Регистрация" в шапке сайта</li>
+                    <li><strong>Заполните форму</strong> - Введите данные и создайте аккаунт</li>
+                    <li><strong>Вход в систему</strong> - Войдите с созданными данными</li>
+                    <li><strong>Личный кабинет</strong> - Изучите функционал кабинета</li>
+                    <li><strong>Выход</strong> - Выйдите из системы</li>
+                </ol>
+                
+                <h3>Тестовые данные:</h3>
+                <div class="code-block">
+Email: test@scentury.ru
+Пароль: password123
+                </div>
+            </div>
+        </div>
+
+        <div style="text-align: center; margin-top: 3rem; padding: 2rem; background: linear-gradient(135deg, #4a7b5d 0%, #2c5530 100%); color: white; border-radius: 10px;">
+            <h2>🎉 Система авторизации готова!</h2>
+            <p>Все формы созданы и протестированы. Система полностью функциональна.</p>
+            <a href="index.php" class="btn" style="background: white; color: #2c5530;">Перейти на сайт</a>
+        </div>
+    </div>
+</body>
+</html>

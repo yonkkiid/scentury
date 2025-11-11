@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Авторизация</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+  <div class="auth-container" role="main" aria-label="Форма авторизации">
+    <h1 class="auth-title">Авторизация</h1>
+
+    <form action="login.php" method="post" autocomplete="off">
+      <div class="form-row">
+        <label for="login">Введите ник...</label>
+        <div class="input-wrapper">
+          <input type="text" id="login" name="login" placeholder="ЛОГИН..." autocomplete="username" required />
+          <button type="button" class="clear-btn" aria-label="Очистить поле логина"
+            onclick="document.getElementById('login').value=''">✖️</button>
+        </div>
+      </div>
+
+      <div class="form-row">
+        <label for="password">Введите пароль...</label>
+        <div class="input-wrapper">
+          <input type="password" id="password" name="password" placeholder="ПАРОЛЬ..." autocomplete="current-password"
+            required />
+          <button type="button" class="show-btn" aria-label="Показать или скрыть пароль"
+            onclick="togglePassword()">👀</button>
+        </div>
+      </div>
+
+      <div class="remember-container">
+        <label class="checkbox-label" for="remember">
+          <input type="checkbox" id="remember" name="remember" checked />
+          Запомнить вход с этого <br />устройства
+        </label>
+      </div>
+
+      <div class="forgot-link-container">
+        <a href="forgot.html" class="forgot-link">Забыли пароль?</a>
+      </div>
+
+      <div class="links-container">
+        <div class="register-header">Регистрация</div>
+        <p class="register-text">
+          Если у вас нет аккаунта <a href="#" onclick="openRegisterModal(); return false;"> <br/>Зарегистрируйтесь тут.</a>
+
+        </p>
+      </div>
+
+      <div class="submit-container">
+        <button type="submit" class="submit-btn">ВОЙТИ НА САЙТ</button>
+      </div>
+
+      <div class="social-buttons" role="group" aria-label="Социальные сети">
+        <button type="button" class="social-button" title="ВКонтакте"
+          onclick="alert('VK login not implemented')">VK</button>
+        <button type="button" class="social-button" title="Discord"
+          onclick="alert('Discord login not implemented')">Discord</button>
+        <button type="button" class="social-button" title="Steam"
+          onclick="alert('Steam login not implemented')">Steam</button>
+        <button type="button" class="social-button" title="Google"
+          onclick="alert('Google login not implemented')">Google</button>
+      </div>
+    </form>
+  </div>
+  <div id="registerModal" class="modal" role="dialog" aria-modal="true" aria-labelledby="registerTitle"
+  style="display:none;">
+  <div class="modal-content">
+    <span class="close" onclick="closeRegisterModal()" aria-label="Закрыть окно регистрации">×</span>
+    <h2 id="registerTitle">Регистрация</h2>
+    <form action="reg.php" method="post" autocomplete="off">
+      <div class="form-row">
+        <label for="reg_login">Логин</label>
+        <input type="text" id="reg_login" name="login" placeholder="Введите логин" required />
+      </div>
+      <div class="form-row">
+        <label for="reg_password">Пароль</label>
+        <input type="password" id="reg_password" name="password" placeholder="Введите пароль" required />
+      </div>
+      <div class="submit-container">
+        <button type="submit" class="submit-btn" name="register">Зарегистрироваться</button>
+      </div>
+    </form>
+  </div>
+</div>
+  <script>
+    function togglePassword() {
+      const pwd = document.getElementById('password');
+      const btn = pwd.nextElementSibling;
+      if (pwd.type === 'password') {
+        pwd.type = 'text';
+        btn.textContent = '✖️';
+      } else {
+        pwd.type = 'password';
+        btn.textContent = '👀';
+      }
+    }
+    function openRegisterModal() {
+      document.getElementById("registerModal").style.display = "block";
+    }
+
+    function closeRegisterModal() {
+      document.getElementById("registerModal").style.display = "none";
+    }
+
+    // Закрытие модального окна при клике вне его
+    window.onclick = function (event) {
+      const modal = document.getElementById("registerModal");
+      if (event.target === modal) {
+        modal.style.display = "none";
+      }
+    }
+  </script>
+</body>
+</html>

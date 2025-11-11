@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Тест новых нот - Scentury</title>
+    <link rel="stylesheet" href="style.css?v=4">
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 20px;
+            text-align: center;
+        }
+        .test-container {
+            background: linear-gradient(135deg, #3d3d3d 0%, #2d2d2d 100%);
+            color: #e0e0e0;
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+            border: 1px solid #404040;
+            max-width: 800px;
+            width: 100%;
+        }
+        h1 {
+            color: #d4a574;
+            margin-bottom: 30px;
+            font-size: 2.5rem;
+        }
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 30px;
+        }
+        .note-category {
+            background: #2d2d2d;
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #404040;
+        }
+        .note-category h3 {
+            color: #d4a574;
+            margin-bottom: 15px;
+        }
+        .note-list {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .note-item {
+            background: #1a1a1a;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #404040;
+            color: #e0e0e0;
+        }
+        .success-message {
+            background: linear-gradient(135deg, #d4a574 0%, #c4966b 100%);
+            color: #1a1a1a;
+            padding: 20px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>🌸 Тест новых нот парфюмерии</h1>
+        
+        <div class="success-message">
+            ✅ Успешно добавлено 30 нот вместо 12! Теперь доступно в 2.5 раза больше вариантов для создания ароматов.
+        </div>
+        
+        <div class="notes-grid">
+            <div class="note-category">
+                <h3>🍊 Верхние ноты (10)</h3>
+                <div class="note-list">
+                    <div class="note-item">Бергамот</div>
+                    <div class="note-item">Лимон</div>
+                    <div class="note-item">Лайм</div>
+                    <div class="note-item">Мандарин</div>
+                    <div class="note-item">Грейпфрут</div>
+                    <div class="note-item">Апельсин</div>
+                    <div class="note-item">Мята</div>
+                    <div class="note-item">Базилик</div>
+                    <div class="note-item">Розмарин</div>
+                    <div class="note-item">Тимьян</div>
+                </div>
+            </div>
+            
+            <div class="note-category">
+                <h3>🌹 Сердечные ноты (10)</h3>
+                <div class="note-list">
+                    <div class="note-item">Роза</div>
+                    <div class="note-item">Жасмин</div>
+                    <div class="note-item">Лаванда</div>
+                    <div class="note-item">Иланг-иланг</div>
+                    <div class="note-item">Лилия</div>
+                    <div class="note-item">Пион</div>
+                    <div class="note-item">Магнолия</div>
+                    <div class="note-item">Герань</div>
+                    <div class="note-item">Ирис</div>
+                    <div class="note-item">Орхидея</div>
+                </div>
+            </div>
+            
+            <div class="note-category">
+                <h3>🌳 Базовые ноты (10)</h3>
+                <div class="note-list">
+                    <div class="note-item">Ваниль</div>
+                    <div class="note-item">Сандал</div>
+                    <div class="note-item">Пачули</div>
+                    <div class="note-item">Амбра</div>
+                    <div class="note-item">Кедр</div>
+                    <div class="note-item">Дубовый мох</div>
+                    <div class="note-item">Мускус</div>
+                    <div class="note-item">Ветивер</div>
+                    <div class="note-item">Бензоин</div>
+                    <div class="note-item">Тонка</div>
+                </div>
+            </div>
+        </div>
+        
+        <div style="margin-top: 30px;">
+            <a href="constructor.php" style="background: linear-gradient(135deg, #d4a574 0%, #c4966b 100%); color: #1a1a1a; padding: 15px 30px; border-radius: 25px; text-decoration: none; font-weight: 600; display: inline-block;">
+                🎨 Перейти к конструктору
+            </a>
+        </div>
+    </div>
+</body>
+</html>
+

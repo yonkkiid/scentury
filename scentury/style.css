@@ -1,0 +1,1120 @@
+/* Сброс стилей и базовые настройки */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #1a1a1a;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Типографика */
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+}
+
+h1 { font-size: 2.5rem; }
+h2 { font-size: 2rem; }
+h3 { font-size: 1.5rem; }
+h4 { font-size: 1.25rem; }
+
+p {
+    margin-bottom: 1rem;
+}
+
+/* Кнопки */
+.btn {
+    display: inline-block;
+    padding: 12px 24px;
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    font-family: 'Arial', sans-serif;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 1rem;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, #d4a574 0%, #c4966b 100%);
+    color: #1a1a1a;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+    border: 1px solid #e8c4a0;
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, #c4966b 0%, #b8875a 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(212, 165, 116, 0.4);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, #e8c4a0 0%, #d4a574 100%);
+    color: #1a1a1a;
+    font-weight: 600;
+    box-shadow: 0 4px 15px rgba(232, 196, 160, 0.3);
+    border: 1px solid #f0d4b8;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #d4a574 0%, #c4966b 100%);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(232, 196, 160, 0.4);
+}
+
+/* Шапка */
+.header {
+    background-color: #2d2d2d;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid #404040;
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+}
+
+.logo h1 {
+    color: #d4a574;
+    margin-bottom: 0;
+    font-size: 2rem;
+    font-weight: 700;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+.logo span {
+    color: #e8c4a0;
+    font-size: 0.9rem;
+    font-style: italic;
+    font-weight: 300;
+}
+
+.nav-list {
+    display: flex;
+    list-style: none;
+    gap: 2rem;
+}
+
+.nav-link {
+    text-decoration: none;
+    color: #e0e0e0;
+    font-weight: 500;
+    transition: color 0.3s ease;
+    position: relative;
+}
+
+.nav-link:hover,
+.nav-link.active {
+    color: #d4a574;
+}
+
+.nav-link.active::after {
+    content: '';
+    position: absolute;
+    bottom: -5px;
+    left: 0;
+    right: 0;
+    height: 2px;
+    background-color: #d4a574;
+}
+
+.mobile-menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+.mobile-menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: #e0e0e0;
+    margin: 3px 0;
+    transition: 0.3s;
+}
+
+/* Кнопки авторизации */
+.auth-buttons {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+}
+
+.auth-buttons .btn {
+    font-size: 0.9rem;
+    padding: 0.5rem 1rem;
+}
+
+.btn-outline {
+    background-color: transparent;
+    color: #d4a574;
+    border: 2px solid #d4a574;
+    font-weight: 600;
+}
+
+.btn-outline:hover {
+    background: linear-gradient(135deg, #d4a574 0%, #c4966b 100%);
+    color: #1a1a1a;
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+}
+
+/* Главный баннер */
+.hero {
+    background: linear-gradient(135deg, #2d2d2d 0%, #1a1a1a 50%, #2d2d2d 100%);
+    color: #e0e0e0;
+    padding: 6rem 0;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(212, 165, 116, 0.1) 0%, rgba(232, 196, 160, 0.05) 100%);
+    pointer-events: none;
+}
+
+.hero-title {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+}
+
+.hero-description {
+    font-size: 1.2rem;
+    margin-bottom: 2rem;
+    opacity: 0.9;
+}
+
+/* Секции */
+.section-title {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #d4a574;
+    font-size: 2.5rem;
+    font-weight: 300;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* Как это работает */
+.how-it-works {
+    padding: 4rem 0;
+    background-color: #2d2d2d;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.step {
+    text-align: center;
+    padding: 3rem 2rem;
+    background: linear-gradient(135deg, #3d3d3d 0%, #2d2d2d 100%);
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.4), 0 3px 10px rgba(212, 165, 116, 0.1);
+    border: 1px solid #404040;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.step:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 40px rgba(0,0,0,0.5), 0 5px 15px rgba(212, 165, 116, 0.2);
+}
+
+.step-number {
+    width: 70px;
+    height: 70px;
+    background: linear-gradient(135deg, #d4a574 0%, #c4966b 100%);
+    color: #1a1a1a;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    font-weight: bold;
+    margin: 0 auto 1rem;
+    box-shadow: 0 8px 25px rgba(212, 165, 116, 0.3);
+    border: 3px solid #e8c4a0;
+}
+
+/* Популярные ароматы */
+.popular-scents {
+    padding: 4rem 0;
+}
+
+.scents-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.scent-card {
+    background: linear-gradient(135deg, #3d3d3d 0%, #2d2d2d 100%);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 8px 25px rgba(0,0,0,0.4), 0 2px 10px rgba(212, 165, 116, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #404040;
+    position: relative;
+}
+
+.scent-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, #d4a574 0%, #e8c4a0 50%, #d4a574 100%);
+}
+
+.scent-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.5), 0 5px 15px rgba(212, 165, 116, 0.2);
+}
+
+.scent-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.scent-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.scent-card h3 {
+    padding: 1rem 1rem 0.5rem;
+    color: #d4a574;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.scent-card p {
+    padding: 0 1rem;
+    color: #b0b0b0;
+    font-size: 0.9rem;
+}
+
+.scent-price {
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #d4a574;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+/* Отзывы */
+.testimonials {
+    padding: 4rem 0;
+    background-color: #2d2d2d;
+}
+
+.testimonials-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.testimonial {
+    background-color: #3d3d3d;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    border: 1px solid #404040;
+}
+
+.testimonial-content p {
+    font-style: italic;
+    margin-bottom: 1rem;
+    color: #b0b0b0;
+}
+
+.testimonial-author strong {
+    color: #d4a574;
+    font-weight: 600;
+}
+
+.testimonial-author span {
+    color: #888;
+    font-size: 0.9rem;
+}
+
+/* Конструктор */
+.constructor {
+    padding: 4rem 0;
+}
+
+.constructor-description {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #b0b0b0;
+    font-size: 1.1rem;
+}
+
+.constructor-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    align-items: start;
+}
+
+.notes-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.notes-column {
+    background-color: #3d3d3d;
+    padding: 1.5rem;
+    border-radius: 10px;
+    border: 2px solid #404040;
+}
+
+.notes-title {
+    color: #d4a574;
+    margin-bottom: 0.5rem;
+    font-size: 1.3rem;
+    font-weight: 600;
+}
+
+.notes-description {
+    color: #b0b0b0;
+    font-size: 0.9rem;
+    margin-bottom: 1rem;
+}
+
+.notes-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.note-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem;
+    background-color: #2d2d2d;
+    border: 2px solid #404040;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.note-item:hover {
+    border-color: #d4a574;
+    background-color: #3d3d3d;
+    box-shadow: 0 2px 8px rgba(212, 165, 116, 0.2);
+}
+
+.note-item.selected {
+    border-color: #d4a574;
+    background: linear-gradient(135deg, #2d2d2d 0%, #3d3d3d 100%);
+    box-shadow: 0 4px 15px rgba(212, 165, 116, 0.3);
+}
+
+.note-name {
+    font-weight: 500;
+}
+
+.note-check {
+    color: #d4a574;
+    font-weight: bold;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 1.2rem;
+}
+
+.note-item.selected .note-check {
+    opacity: 1;
+}
+
+/* Предпросмотр аромата */
+.scent-preview {
+    background-color: #3d3d3d;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid #404040;
+    position: sticky;
+    top: 100px;
+}
+
+.scent-preview h3 {
+    color: #d4a574;
+    margin-bottom: 1.5rem;
+    font-weight: 600;
+    font-size: 1.4rem;
+}
+
+.scent-name-input {
+    margin-bottom: 1.5rem;
+}
+
+.scent-name-input label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+.scent-name-input input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #404040;
+    border-radius: 6px;
+    font-size: 1rem;
+    transition: border-color 0.3s ease;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.scent-name-input input:focus {
+    outline: none;
+    border-color: #d4a574;
+    box-shadow: 0 0 10px rgba(212, 165, 116, 0.3);
+}
+
+.selected-notes h4 {
+    color: #d4a574;
+    margin-bottom: 1rem;
+    font-weight: 600;
+}
+
+.selected-notes-list {
+    min-height: 100px;
+    background-color: #2d2d2d;
+    border: 2px solid #404040;
+    border-radius: 6px;
+    padding: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.selected-notes-empty {
+    color: #888;
+    font-style: italic;
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.selected-note {
+    display: inline-block;
+    background: linear-gradient(135deg, #d4a574 0%, #c4966b 100%);
+    color: #1a1a1a;
+    padding: 0.4rem 1rem;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    margin: 0.25rem;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(212, 165, 116, 0.3);
+    border: 1px solid #e8c4a0;
+}
+
+.scent-actions {
+    display: flex;
+    gap: 1rem;
+}
+
+.scent-actions .btn {
+    flex: 1;
+}
+
+/* Каталог */
+.catalog {
+    padding: 4rem 0;
+}
+
+.catalog-filters {
+    display: flex;
+    gap: 2rem;
+    margin-bottom: 3rem;
+    flex-wrap: wrap;
+    align-items: end;
+}
+
+.filter-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.filter-group label {
+    font-weight: 500;
+    color: #e0e0e0;
+}
+
+.filter-group select {
+    padding: 0.75rem;
+    border: 2px solid #404040;
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: #2d2d2d;
+    color: #e0e0e0;
+}
+
+.catalog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.catalog-item {
+    background-color: #3d3d3d;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    transition: transform 0.3s ease;
+    border: 1px solid #404040;
+}
+
+.catalog-item:hover {
+    transform: translateY(-5px);
+}
+
+.catalog-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.catalog-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.catalog-item h3 {
+    padding: 1rem 1rem 0.5rem;
+    color: #d4a574;
+    font-weight: 600;
+    font-size: 1.3rem;
+}
+
+.catalog-item p {
+    padding: 0 1rem;
+    color: #b0b0b0;
+    font-size: 0.9rem;
+}
+
+.catalog-price {
+    padding: 1rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    color: #d4a574;
+    text-shadow: 0 1px 2px rgba(0,0,0,0.3);
+}
+
+.catalog-item .btn {
+    margin: 0 1rem 1rem;
+    width: calc(100% - 2rem);
+}
+
+/* О компании */
+.about {
+    padding: 4rem 0;
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.about-text h3 {
+    color: #2c5530;
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-text h3:first-child {
+    margin-top: 0;
+}
+
+.about-text ul {
+    margin-left: 1.5rem;
+    margin-bottom: 1rem;
+}
+
+.about-text li {
+    margin-bottom: 0.5rem;
+}
+
+.about-image img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.about-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.stat-item {
+    text-align: center;
+    padding: 2rem;
+    background-color: #f8f9fa;
+    border-radius: 10px;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    font-weight: bold;
+    color: #4a7b5d;
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.about-team h3 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.team-member {
+    text-align: center;
+    padding: 1.5rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.member-photo {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    overflow: hidden;
+    margin: 0 auto 1rem;
+}
+
+.member-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.team-member h4 {
+    color: #2c5530;
+    margin-bottom: 0.5rem;
+}
+
+.team-member p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.25rem;
+}
+
+/* Блог */
+.blog {
+    padding: 4rem 0;
+}
+
+.blog-description {
+    text-align: center;
+    margin-bottom: 3rem;
+    color: #666;
+    font-size: 1.1rem;
+}
+
+.blog-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+}
+
+.blog-post {
+    background-color: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.blog-post:hover {
+    transform: translateY(-5px);
+}
+
+.post-image {
+    height: 200px;
+    overflow: hidden;
+}
+
+.post-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.post-content {
+    padding: 1.5rem;
+}
+
+.post-meta {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.post-category {
+    background-color: #4a7b5d;
+    color: white;
+    padding: 0.25rem 0.75rem;
+    border-radius: 15px;
+    font-size: 0.8rem;
+}
+
+.blog-post h3 {
+    color: #2c5530;
+    margin-bottom: 1rem;
+}
+
+.blog-post p {
+    color: #666;
+    margin-bottom: 1rem;
+}
+
+.read-more {
+    color: #4a7b5d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.read-more:hover {
+    color: #2c5530;
+}
+
+.blog-pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+.pagination-info {
+    color: #666;
+    font-weight: 500;
+}
+
+/* Контакты */
+.contacts {
+    padding: 4rem 0;
+}
+
+.contacts-content {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+.contact-form-section h3,
+.contact-info h3 {
+    color: #2c5530;
+    margin-bottom: 1.5rem;
+}
+
+.contact-form {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 0.75rem;
+    border: 2px solid #e9ecef;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: inherit;
+    transition: border-color 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #4a7b5d;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: auto;
+    margin-right: 0.5rem;
+}
+
+.contact-info {
+    background-color: #f8f9fa;
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid #e9ecef;
+}
+
+.contact-item {
+    margin-bottom: 2rem;
+}
+
+.contact-item h4 {
+    color: #2c5530;
+    margin-bottom: 0.5rem;
+}
+
+.contact-item p {
+    color: #666;
+    margin-bottom: 0.25rem;
+}
+
+.social-links {
+    display: flex;
+    gap: 1rem;
+    margin-top: 0.5rem;
+}
+
+.social-link {
+    color: #4a7b5d;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+.social-link:hover {
+    color: #2c5530;
+}
+
+.map-section h3 {
+    color: #2c5530;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+
+.map {
+    position: relative;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.map img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+}
+
+.map-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+.map-overlay p {
+    margin-bottom: 0.25rem;
+    font-weight: 500;
+}
+
+/* Подвал */
+.footer {
+    background-color: #1a1a1a;
+    color: #e0e0e0;
+    padding: 3rem 0 1rem;
+    border-top: 1px solid #404040;
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.footer-section h3,
+.footer-section h4 {
+    color: white;
+    margin-bottom: 1rem;
+}
+
+.footer-section p {
+    color: #ccc;
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul {
+    list-style: none;
+}
+
+.footer-section ul li {
+    margin-bottom: 0.5rem;
+}
+
+.footer-section ul li a {
+    color: #b0b0b0;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-section ul li a:hover {
+    color: #4a7b5d;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 2rem;
+    border-top: 1px solid #404040;
+    color: #888;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+    .mobile-menu-toggle {
+        display: flex;
+    }
+    
+    .nav {
+        display: none;
+    }
+    
+    .hero-title {
+        font-size: 2rem;
+    }
+    
+    .hero-description {
+        font-size: 1rem;
+    }
+    
+    .constructor-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .notes-columns {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .contacts-content {
+        grid-template-columns: 1fr;
+    }
+    
+    .catalog-filters {
+        flex-direction: column;
+        align-items: stretch;
+    }
+    
+    .filter-group {
+        width: 100%;
+    }
+    
+    .scent-actions {
+        flex-direction: column;
+    }
+    
+    .blog-pagination {
+        flex-direction: column;
+        gap: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 0 15px;
+    }
+    
+    .hero {
+        padding: 2rem 0;
+    }
+    
+    .hero-title {
+        font-size: 1.5rem;
+    }
+    
+    .section-title {
+        font-size: 1.5rem;
+    }
+    
+    .steps {
+        grid-template-columns: 1fr;
+    }
+    
+    .scents-grid,
+    .catalog-grid,
+    .blog-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .about-stats {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .team-grid {
+        grid-template-columns: 1fr;
+    }
+}

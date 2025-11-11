@@ -1,0 +1,16 @@
+[
+    {
+        "id": "68fc26729fa9f",
+        "first_name": "Слава",
+        "last_name": "Курекин",
+        "email": "kurekins@bk.ru",
+        "phone": "+79777531208",
+        "password": "$2y$10$9snfTmVmkGe6OyHGtup1q.og6RaTPhHE2zA65hlA2mVy17RFBMRBa",
+        "newsletter": true,
+        "status": "active",
+        "role": "user",
+        "created_at": "2025-10-25 03:22:58",
+        "last_login": "2025-10-25 03:23:21",
+        "remember_token": null
+    }
+]
