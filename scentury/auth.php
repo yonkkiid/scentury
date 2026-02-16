@@ -1,4 +1,5 @@
 <?php
+ob_start();
 session_start();
 
 // Подключение к базе данных
@@ -58,9 +59,11 @@ function generateToken() {
     return bin2hex(random_bytes(32));
 }
 
-// Обработка POST запросов
-if ($_SERVER['REQUEST_METHOD'] === 'POST') {
-    $action = $_POST['action'] ?? '';
+// ============= ИСПРАВЛЕННАЯ СЕКЦИЯ =============
+// Обработка POST и GET запросов
+if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($_GET['action'])) {
+    // Получаем action из POST или GET
+    $action = $_POST['action'] ?? $_GET['action'] ?? '';
     
     switch ($action) {
         case 'login':
@@ -77,6 +80,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             exit;
     }
 }
+// ==============================================
 
 // Обработка входа
 function handleLogin() {
@@ -281,14 +285,38 @@ function handleRegister() {
 
 // Обработка выхода
 function handleLogout() {
-    // Очищаем сессию
+    // Начинаем сессию, если она еще не начата
+    if (session_status() === PHP_SESSION_NONE) {
+        session_start();
+    }
+    
+    // Очищаем все данные сессии
+    $_SESSION = array();
+    
+    // Удаляем cookie сессии
+    if (ini_get("session.use_cookies")) {
+        $params = session_get_cookie_params();
+        setcookie(session_name(), '', time() - 42000,
+            $params["path"], $params["domain"],
+            $params["secure"], $params["httponly"]
+        );
+    }
+    
+    // Уничтожаем сессию
     session_destroy();
     
     // Удаляем cookie запоминания
     if (isset($_COOKIE['remember_token'])) {
         setcookie('remember_token', '', time() - 3600, '/');
+        unset($_COOKIE['remember_token']);
     }
     
+    // Очищаем буфер вывода перед редиректом
+    while (ob_get_level()) {
+        ob_end_clean();
+    }
+    
+    // Редирект на страницу входа
     header('Location: login.php?success=logged_out');
     exit;
 }
@@ -353,5 +381,6 @@ function requireRole($role) {
         exit;
     }
 }
-?>
 
+ob_end_flush();
+?>

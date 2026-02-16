@@ -1,3 +1,6 @@
+<?php
+session_start();
+?>
 <!DOCTYPE html>
 <html lang="ru">
 <head>
@@ -247,6 +250,9 @@
                     case 'session_expired':
                         echo '<div class="error-message">Сессия истекла. Войдите снова</div>';
                         break;
+                    default:
+                        echo '<div class="error-message">Ошибка входа. Попробуйте снова</div>';
+                        break;
                 }
             }
             
@@ -261,6 +267,9 @@
                         break;
                     case 'logged_out':
                         echo '<div class="success-message">Вы успешно вышли из системы</div>';
+                        break;
+                    default:
+                        echo '<div class="success-message">Действие выполнено успешно</div>';
                         break;
                 }
             }
@@ -315,4 +324,3 @@
     </script>
 </body>
 </html>
-
