@@ -245,7 +245,6 @@
             </div>
             
             <?php
-            // Обработка ошибок
             if (isset($_GET['error'])) {
                 $error = $_GET['error'];
                 switch($error) {

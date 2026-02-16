@@ -12,9 +12,11 @@
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <h1>Scentury</h1>
-                    <span>Конструктор парфюмерии</span>
-                </div>
+    <img src="images/logo.png" alt="Scentury Logo" class="logo-img">
+    <div class="logo-text">
+        <h1>Scentury</h1>
+    </div>
+</div>
                 <nav class="nav">
                     <ul class="nav-list">
                         <li><a href="index.php" class="nav-link">Главная</a></li>
